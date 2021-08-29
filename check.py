@@ -2,7 +2,6 @@ from random import seed
 from random import random
 import pyaudio
 import wave
-
 #import pylab
 import datetime
 #
@@ -89,8 +88,8 @@ chainsaw = 0
 axe = 0
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nREAL-TIME DEFORESTATION DETECTION USING AI\n\n\n\n\n\n\n\n\n\n\n\n\n")
 
-wvoutput = '1123.wav'
-wf = wave.open(wvoutput, 'r')
+wvoutput = '5761.wav'
+f = wave.open(wvoutput, 'r')
 
 a = aT.file_classification(wvoutput, "svmSMtemp","svm")    
 if a[1][0]==max(a[1]):
@@ -102,19 +101,9 @@ elif a[1][1]==max(a[1]):
 else:
     chainsaw = 0
     axe = 0
-if (chainsaw > 0 and chainsaw % THRESHOLD == 0):
-    print(bcolors.FAIL + "Woodcutting sound detected!\n         " + bcolors.ENDC)
-   
-#
-  
-elif (axe > 0 and axe % THRESHOLD == 0):
+if (chainsaw > 0):
+    print(bcolors.FAIL + "Woodcutting sound detected!\n         " + bcolors.ENDC)  
+elif (axe > 0):
     print(bcolors.FAIL + "Woodcutting sound detected!\n              " + bcolors.ENDC)
-  
 else:
     print(bcolors.WARNING + "Analyzing Latest Sound Samples \n" + bcolors.ENDC)
-if (chainsaw >= THRESHOLD or axe >= THRESHOLD):
-    pixel_ring.think()
-else:
-    pixel_ring.wakeup()
-sys.stdout.write("\033[F")
-sys.stdout.write("\033[F")
