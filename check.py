@@ -89,7 +89,8 @@ chainsaw = 0
 axe = 0
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nREAL-TIME DEFORESTATION DETECTION USING AI\n\n\n\n\n\n\n\n\n\n\n\n\n")
 
-wvoutput = wave.open('1123.wav', 'r')
+wvoutput = '1123.wav'
+wf = wave.open(wvoutput, 'r')
 
 a = aT.file_classification(wvoutput, "svmSMtemp","svm")    
 if a[1][0]==max(a[1]):
