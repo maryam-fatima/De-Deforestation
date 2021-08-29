@@ -67,16 +67,6 @@ THRESHOLD = 2
 #sql = "INSERT INTO `NODE03` (`timestamp`, `detections`, `alert`) VALUES (%s, %s, %s)"
 #  it is node 03 in abv line. it should be node 01
 
-
-# Setup Stream
-p = pyaudio.PyAudio()
-stream = p.open(format=FORMAT,
-                channels=CHANNELS,
-                rate=RATE,
-                input=6,
-                frames_per_buffer=CHUNK)
-
-
 # Handle Ctrl+C to gracefully exit the software i.e. close all streams and cursors
 def sigint_handler(sig, frame):
     # Graceful Exit :)
@@ -92,7 +82,6 @@ def sigint_handler(sig, frame):
 # Vars
 file = []
 a = []
-signal.signal(signal.SIGINT, sigint_handler)
 
 # Turn on LED Indicators
 # Do it again and again
