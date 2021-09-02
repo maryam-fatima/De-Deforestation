@@ -91,17 +91,16 @@ print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 wvoutput = '5761.wav'
 f = wave.open(wvoutput, 'r')
 
-#a = aT.file_classification(wvoutput, "svmSMtemp","svm")    
-a, p, p_nam = aT.file_classification(wvoutput, "svmSMtemp","svm")   
+c, a, a_nam = aT.file_classification(wvoutput, "svmSMtemp","svm")   
 
-for i in range(len(p_nam)):
-    print(f'P({p_nam[i]}={p[i]})')
+for i in range(len(a_nam)):
+    print(f'P({a_nam[i]}={a[i]})')
 print()
 
-if a[1][0]==max(a[1]):
+if a[0]==max(a):
     chainsaw = chainsaw + 1
     axe = 0
-elif a[1][1]==max(a[1]):
+elif a[1]==max(a):
     axe = axe + 1
     chainsaw = 0
 else:
