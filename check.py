@@ -91,7 +91,12 @@ print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 wvoutput = '5761.wav'
 f = wave.open(wvoutput, 'r')
 
-a = aT.file_classification(wvoutput, "svmSMtemp","svm")    
+#a = aT.file_classification(wvoutput, "svmSMtemp","svm")    
+a, p, p_nam = aT.file_classification(wvoutput, "svmSMtemp","svm")   
+print(f'P({p_nam[0]}={p[0]})')
+print(f'P({p_nam[1]}={p[1]})')
+print()
+
 if a[1][0]==max(a[1]):
     chainsaw = chainsaw + 1
     axe = 0
@@ -101,6 +106,7 @@ elif a[1][1]==max(a[1]):
 else:
     chainsaw = 0
     axe = 0
+    
 if (chainsaw > 0):
     print(bcolors.FAIL + "Woodcutting sound detected!\n         " + bcolors.ENDC)  
 elif (axe > 0):
