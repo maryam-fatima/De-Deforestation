@@ -93,8 +93,9 @@ f = wave.open(wvoutput, 'r')
 
 #a = aT.file_classification(wvoutput, "svmSMtemp","svm")    
 a, p, p_nam = aT.file_classification(wvoutput, "svmSMtemp","svm")   
-print(f'P({p_nam[0]}={p[0]})')
-print(f'P({p_nam[1]}={p[1]})')
+
+for i in range(len(p_nam)):
+    print(f'P({p_nam[i]}={p[i]})')
 print()
 
 if a[1][0]==max(a[1]):
