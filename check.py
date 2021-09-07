@@ -88,7 +88,7 @@ chainsaw = 0
 axe = 0
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nREAL-TIME DEFORESTATION DETECTION USING AI\n\n\n\n\n\n\n\n\n\n\n\n\n")
 
-wvoutput = '5761.wav'
+wvoutput = '9002.wav'
 f = wave.open(wvoutput, 'r')
 
 c, a, a_nam = aT.file_classification(wvoutput, "svmSMtemp","svm")   
