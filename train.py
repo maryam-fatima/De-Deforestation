@@ -1,8 +1,9 @@
 # Example6: use pyAudioAnalysis wrapper 
 # to extract feature and train SVM classifier 
-# for 20 music (10 classical/10 metal) song samples
+
+import os
 from pyAudioAnalysis.audioTrainTest import extract_features_and_train
-chdir("/content/gdrive/MyDrive/project_folder/Wood cutting sound")
+os.chdir("/content/gdrive/MyDrive/project_folder/Wood cutting sound")
 
 mt, st = 1.0, 0.05
 #dirs = ["data/chainsaw", "data/axe", "data/random"]
