@@ -3,7 +3,7 @@
 
 import os
 from pyAudioAnalysis.audioTrainTest import extract_features_and_train
-os.chdir("/content/gdrive/MyDrive/project_folder/Wood cutting sound")
+os.chdir("/content/gdrive/MyDrive/project_folder/dataset")
 
 mt, st = 1.0, 0.05
 #dirs = ["data/chainsaw", "data/axe", "data/random"]
