@@ -70,7 +70,7 @@ chainsaw = 0
 axe = 0
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nREAL-TIME DEFORESTATION DETECTION USING AI\n\n\n\n\n\n\n\n\n\n\n\n\n")
 
-wvoutput = '5761.wav'
+#wvoutput = '5761.wav'
 
 def downsample(filename, new_sr):
     """Lower the sampling rate by factor."""
@@ -78,7 +78,8 @@ def downsample(filename, new_sr):
     wave, _ = librosa.load(filename, sr=new_sr)
     scipy.io.wavfile.write(newfilename, new_sr, wave)
     
-#downsample(wvoutput, 36000)
+#downsample(wvoutput, 16000)
+#downsample(wvoutput, 24000)
 
 wvoutput = "5761.wav"
 
