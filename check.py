@@ -1,3 +1,4 @@
+
 from random import seed
 from random import random
 import pyaudio
@@ -12,33 +13,14 @@ import time
 import sys
 import os
 import signal
-#import numpy as np
-#import matplotlib as plt
-#from pyAudioAnalysis.pyAudioAnalysis import audioTrainTest as aT
-from random import seed
-from random import random
-import pyaudio
-import wave
-
-#import pylab
-import datetime
-#
-#import yagmail
-#import  pytz
-
-import time
-import sys
-import os
-import signal
+import scipy.io.wavfile
+import scipy.signal
+import librosa
 #import numpy as np
 #import matplotlib as plt
 #from pyAudioAnalysis.pyAudioAnalysis import audioTrainTest as aT
 from pyAudioAnalysis import audioTrainTest as aT
 #
-
-import wave
-#import sklearn
-#import mysql.connector
 
 class bcolors:
     HEADER = '\033[95m'
@@ -89,9 +71,19 @@ axe = 0
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nREAL-TIME DEFORESTATION DETECTION USING AI\n\n\n\n\n\n\n\n\n\n\n\n\n")
 
 wvoutput = '5761.wav'
-f = wave.open(wvoutput, 'r')
 
-c, a, a_nam = aT.file_classification(wvoutput, "svmSMtemp","svm")   
+def downsample(filename, new_sr):
+    """Lower the sampling rate by factor."""
+    newfilename = filename[:-4]+'-down'+str(new_sr)+'.wav'
+    wave, _ = librosa.load(filename, sr=new_sr)
+    scipy.io.wavfile.write(newfilename, new_sr, wave)
+    
+downsample(wvoutput, 16000)
+downsample(wvoutput, 24000)
+
+wvoutput = "5761-down16000.wav"
+
+c, a, a_nam = aT.file_classification(wvoutput, "svm_CuttingNonCutting","svm")   
 
 for i in range(len(a_nam)):
     print(f'P({a_nam[i]}={a[i]})')
