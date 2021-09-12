@@ -81,7 +81,7 @@ def downsample(filename, new_sr):
 #downsample(wvoutput, 16000)
 #downsample(wvoutput, 24000)
 
-wvoutput = "5761.wav"
+wvoutput = "5212-down16000.wav"
 
 c, a, a_nam = aT.file_classification(wvoutput, "svm_CuttingNonCutting","svm")   
 
