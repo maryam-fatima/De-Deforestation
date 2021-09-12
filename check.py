@@ -78,9 +78,9 @@ def downsample(filename, new_sr):
     wave, _ = librosa.load(filename, sr=new_sr)
     scipy.io.wavfile.write(newfilename, new_sr, wave)
     
-downsample(wvoutput, 36000)
+#downsample(wvoutput, 36000)
 
-wvoutput = "5761-down36000.wav"
+wvoutput = "5761.wav"
 
 c, a, a_nam = aT.file_classification(wvoutput, "svm_CuttingNonCutting","svm")   
 
